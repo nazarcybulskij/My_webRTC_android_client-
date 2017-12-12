@@ -107,9 +107,7 @@ public class InComingCallActivity extends AppCompatActivity implements CallFragm
                 public void run() {
                     greenView.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(),mRoomId+"",Toast.LENGTH_SHORT).show();
-
                     joinOrCreateRoom(mRoomId);
-
                 }
             });
         }

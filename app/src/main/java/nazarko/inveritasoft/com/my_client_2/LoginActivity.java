@@ -1,8 +1,11 @@
 package nazarko.inveritasoft.com.my_client_2;
 
 import android.Manifest;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -18,17 +21,32 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginFragment mLoginFragment;
     private int PERMISSIONS_REQUEST_CODE = 111;
+    private SharedPreferences mSharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        initDate();
         requestPermision();
         if (savedInstanceState == null) {
-            loadFragment();
+            if (mSharedPreferences.getString(Constants.TOKEN,null)!= null){
+                showMainActivity();
+            }else{
+                loadFragment();
+            }
         }
 
 
+    }
+
+    private void showMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void initDate() {
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
 

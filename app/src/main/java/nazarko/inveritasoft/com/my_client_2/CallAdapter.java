@@ -8,18 +8,21 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import nazarko.inveritasoft.com.my_client_2.persistence.User;
+
 /**
  * Created by nazarko on 28.11.17.
  */
 
 public class CallAdapter extends RecyclerView.Adapter<CallAdapter.ViewHolder> {
 
-    private List<String> mDataList;
+//    private List<String> mDataList;
     private  OnCallClickListener onCallClickListener;
+    private List<User> users;
 
-    public CallAdapter(List<String> mDataList) {
-        this.mDataList = mDataList;
-    }
+//    public CallAdapter(List<String> mDataList) {
+//        this.mDataList = mDataList;
+//    }
 
 
     @Override
@@ -30,8 +33,8 @@ public class CallAdapter extends RecyclerView.Adapter<CallAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        final String id = mDataList.get(position);
-        viewHolder.getTextView().setText(mDataList.get(position));
+        final String id = users.get(position).getName();
+        viewHolder.getNameTextView().setText(id);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,24 +47,36 @@ public class CallAdapter extends RecyclerView.Adapter<CallAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        if (users == null){
+            return  0;
+        }
+        return users.size();
     }
 
     public void addCallClickListener(OnCallClickListener onCallClickListener) {
         this.onCallClickListener = onCallClickListener;
     }
 
+    public void setUsers(List<User> users) {
+        this.users = users;
+        notifyDataSetChanged();
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
     public  class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView textView;
+        private final TextView name;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.textView);
+            name = (TextView) itemView.findViewById(R.id.name);
         }
 
-        public TextView getTextView() {
-            return textView;
+        public TextView getNameTextView() {
+            return name;
         }
     }
 

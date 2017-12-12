@@ -6,13 +6,15 @@ package nazarko.inveritasoft.com.my_client_2;
 
 public class Constants {
 
-    public static final String BASE_URL = "https://apprtc-node-server-nazarcybulskij.c9users.io:8080/api/v1/";
+
+
     public static final String TOKEN = "token";
     public static final String EMAIL = "email";
 
-
-
-    public static String SERVER_URL = "https://apprtc-node-server-nazarcybulskij.c9users.io:8080";
+    //public static String SERVER_URL = "https://apprtc-node-server-nazarcybulskij.c9users.io:8080";
+    public static String SERVER_URL = "http://192.168.4.43:8080";
+    //public static String SERVER_URL = "http://192.168.56.1:8080";
+    public static final String BASE_URL = SERVER_URL +"/api/v1/";
 
     public static String USERS_IDS = "users-ids";
 
@@ -24,7 +26,6 @@ public class Constants {
     public static String ANSWER_CALL_PHONE = "answer-call-phone";
 
     public static String HANG_UP_CALL = "hang-up-call";
-
 
     // emit event
 

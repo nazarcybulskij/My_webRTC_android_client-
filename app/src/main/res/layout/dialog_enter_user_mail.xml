@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp">
+
+            <Button
+                android:id="@+id/close"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_close_black_24dp"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tv_new_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/close"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:lines="3"
+                android:text="@string/enter_new_mail"
+                android:textSize="21sp" />
+
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_below="@id/tv_new_mail" />
+
+            <Button
+                android:id="@+id/btn_sent"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_below="@id/edt_email"
+                android:layout_marginRight="55dp"
+                android:layout_centerInParent="true"
+                android:background="@color/orange"
+                android:text="@string/save"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "953231011737",
+    "firebase_url": "https://myclientbchat.firebaseio.com",
+    "project_id": "myclientbchat",
+    "storage_bucket": "myclientbchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953231011737:android:6c29c61fefb1621c",
+        "android_client_info": {
+          "package_name": "nazarko.inveritasoft.com.my_client_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953231011737-6ol8p7l7rhuu0qb24qo2finupu6i9nrl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYaESyvdM-83xmZO3sAo_R_zL-2M8fwNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
